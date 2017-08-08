@@ -3,4 +3,5 @@ allow time_daemon init:unix_stream_socket connectto;
 allow time_daemon diag_prop:property_service set;
 allow time_daemon persist_file:file rw_file_perms;
 allow time_daemon persist_file:dir search;
+allow time_daemon diag_device:chr_file { read write };
 get_prop(time_daemon, diag_prop);

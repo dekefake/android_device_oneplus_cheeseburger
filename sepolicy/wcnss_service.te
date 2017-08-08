@@ -11,3 +11,6 @@ allow wcnss_service per_mgr:binder { call transfer };
 allow wcnss_service servicemanager:binder call;
 allow wcnss_service shell_exec:file { execute execute_no_trans getattr open read };
 allow wcnss_service toolbox_exec:file { execute execute_no_trans getattr open read };
+
+allow wcnss_service diag_device:chr_file { read write };
+

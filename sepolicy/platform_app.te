@@ -1,1 +1,2 @@
 allow platform_app nfc_service:service_manager find;
+allow platform_app default_android_service:service_manager find;

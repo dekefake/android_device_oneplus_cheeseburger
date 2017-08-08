@@ -27,6 +27,10 @@ $(call inherit-product, vendor/oneplus/cheeseburger/cheeseburger-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# Dalvik/HWUI
+$(call inherit-product, $(LOCAL_PATH)/phone-xxxhdpi-4096-dalvik-heap.mk)
+$(call inherit-product, $(LOCAL_PATH)/phone-xxxhdpi-4096-hwui-memory.mk)
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
