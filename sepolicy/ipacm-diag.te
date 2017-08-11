@@ -1,2 +1,3 @@
 set_prop(ipacm-diag, diag_prop)
 set_prop(ipacm-diag, system_prop)
+allow ipacm-diag diag_device:chr_file { read write };
