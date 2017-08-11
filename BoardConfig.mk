@@ -107,6 +107,9 @@ BOARD_USES_QCNE := true
 TARGET_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
+# Media
+ARCH_ARM_HAVE_NEON := true
+
 # Display
 BOARD_USES_ADRENO := true
 
@@ -142,6 +145,10 @@ TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
+
+
+# Init
+TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
