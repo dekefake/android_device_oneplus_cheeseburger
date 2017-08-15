@@ -22,8 +22,6 @@
 # definition file).
 #
 
-TARGET_ENABLE_QC_AV_EHANCEMENTS := true
-TARGET_USES_MEDIA_EXTENSIONS := true
 
 $(call inherit-product, vendor/oneplus/cheeseburger/cheeseburger-vendor.mk)
 
@@ -228,12 +226,6 @@ PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libOmxVidcCommon \
     libstagefright_soft_flacenc
-
-# QC AV Ehancements
-PRODUCT_PACKAGES += \
-    libdashplayer \
-    libqcmediaplayer \
-    qcmediaplayer
 
 # OMX
 PRODUCT_PACKAGES += \
