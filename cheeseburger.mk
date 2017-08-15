@@ -22,6 +22,9 @@
 # definition file).
 #
 
+TARGET_ENABLE_QC_AV_EHANCEMENTS := true
+TARGET_USES_MEDIA_EXTENSIONS := true
+
 $(call inherit-product, vendor/oneplus/cheeseburger/cheeseburger-vendor.mk)
 
 # Overlays
@@ -219,6 +222,18 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     $(LOCAL_PATH)/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
+# Media
+PRODUCT_PACKAGES += \
+    libdivxdrmdecrypt \
+    libOmxVidcCommon \
+    libstagefright_soft_flacenc
+
+# QC AV Ehancements
+PRODUCT_PACKAGES += \
+    libdashplayer \
+    libqcmediaplayer \
+    qcmediaplayer
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
@@ -236,6 +251,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8998 \
     powerhint.qti
+
+# QPerformance
+PRODUCT_BOOT_JARS += QPerformance
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint_soc_id_292.xml:system/etc/powerhint.xml
