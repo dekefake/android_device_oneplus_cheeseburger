@@ -212,10 +212,11 @@ PRODUCT_COPY_FILES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    nfc_nci.pn54x.default \
-    NfcNci \
-    nfcee_access.xml \
-    nfcse_access.xml \
+    com.nxp.nfc.nq \
+    nfc_nci.nqx.default \
+    NQNfcNci \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
     Tag
 
 PRODUCT_COPY_FILES += \
