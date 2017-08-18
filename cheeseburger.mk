@@ -140,9 +140,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fingerprintd
 
-# QPerformance
-PRODUCT_BOOT_JARS += QPerformance
-
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
     fs_config_files
