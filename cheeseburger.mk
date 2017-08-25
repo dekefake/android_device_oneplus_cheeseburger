@@ -297,6 +297,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
     $(LOCAL_PATH)/rootdir/etc/init.adin.rc:root/init.adin.rc
 
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_cheeseburger
+
 # RIL
 PRODUCT_PACKAGES += \
     librmnetctl \
