@@ -27,8 +27,8 @@
 #include <time.h>
 #include <unistd.h>
 
-#include "edify/expr.h"
-#include "updater/install.h"
+#include <edify/expr.h>
+#include <updater/install.h>
 
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
