@@ -2,3 +2,9 @@ allow untrusted_app sysfs:file r_file_perms;
 
 # fb messenger
 allow untrusted_app proc_stat:file r_file_perms;
+
+allow untrusted_app persist_file:dir getattr;
+allow untrusted_app proc_touchpanel:dir search;
+allow untrusted_app rfs_system_file:dir getattr;
+allow untrusted_app rootfs:dir read;
+allow untrusted_app tombstone_data_file:dir getattr;

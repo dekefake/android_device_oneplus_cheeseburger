@@ -3,4 +3,4 @@ set_prop(audioserver, diag_prop);
 allow audioserver self:process execmem;
 allow audioserver bootanim:binder call;
 allow audioserver diag_device:chr_file { ioctl open read write };
-
+allow audioserver media_rw_data_file:dir search;
