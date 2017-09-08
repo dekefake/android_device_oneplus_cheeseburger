@@ -22,5 +22,21 @@ target_firmware_path := $(ANDROID_BUILD_TOP)/device/oneplus/oneplus5-images
 # Logo.bin
 $(call add-firmware-file,$(target_firmware_path)/logo.bin)
 
+# Firmware images
+$(call add-firmware-file,$(target_firmware_path)/abl.elf)
+$(call add-firmware-file,$(target_firmware_path)/adspso.bin)
+$(call add-firmware-file,$(target_firmware_path)/BTFM.bin)
+$(call add-firmware-file,$(target_firmware_path)/cmnlib64.mbn)
+$(call add-firmware-file,$(target_firmware_path)/cmnlib.mbn)
+$(call add-firmware-file,$(target_firmware_path)/devcfg.mbn)
+$(call add-firmware-file,$(target_firmware_path)/hyp.mbn)
+$(call add-firmware-file,$(target_firmware_path)/keymaster.mbn)
+$(call add-firmware-file,$(target_firmware_path)/NON-HLOS.bin)
+$(call add-firmware-file,$(target_firmware_path)/pmic.elf)
+$(call add-firmware-file,$(target_firmware_path)/rpm.mbn)
+$(call add-firmware-file,$(target_firmware_path)/static_nvbk.bin)
+$(call add-firmware-file,$(target_firmware_path)/tz.mbn)
+$(call add-firmware-file,$(target_firmware_path)/xbl.elf)
+
 # Unset local variable
 target_firmware_path :=
