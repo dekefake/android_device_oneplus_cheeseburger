@@ -35,3 +35,43 @@ def AddModemAssertion(info):
       cmd = 'assert(cheeseburger.verify_modem("' + version + '") == "1");'
       info.script.AppendExtra(cmd)
   return
+
+def InstallImage(img_name, img_file, partition, info):
+  common.ZipWriteStr(info.output_zip, "firmware/" + img_name, img_file)
+  info.script.AppendExtra(('package_extract_file("' + "firmware/" + img_name + '", "/dev/block/bootdevice/by-name/' + partition + '");'))
+
+image_partitions = {
+   'cmnlib64.mbn' : 'cmnlib64',
+   'cmnlib.mbn' : 'cmnlib',
+   'hyp.mbn' : 'hyp',
+   'pmic.elf' : 'pmic',
+   'tz.mbn' : 'tz',
+   'abl.elf' : 'abl',
+   'devcfg.mbn' : 'devcfg',
+   'keymaster.mbn' : 'keymaster',
+   'xbl.elf' : 'xbl',
+   'rpm.mbn' : 'rpm',
+   'cmnlib64.mbn' : 'cmnlib64bak',
+   'cmnlib.mbn' : 'cmnlibbak',
+   'hyp.mbn' : 'hypbak',
+   'tz.mbn' : 'tzbak',
+   'abl.elf' : 'ablbak',
+   'keymaster.mbn' : 'keymasterbak',
+   'xbl.elf' : 'xblbak',
+   'rpm.mbn' : 'rpmbak',
+   'NON-HLOS.bin' : 'modem',
+   'static_nvbk.bin' : 'oem_stanvbk',
+   'adspso.bin' : 'dsp',
+   'BTFM.bin' : 'bluetooth',
+   'logo.bin' : 'LOGO'
+}
+
+def FullOTA_InstallEnd(info):
+  info.script.Print("Writing images...")
+  for k, v in image_partitions.iteritems():
+    try:
+      img_file = info.input_zip.read("firmware/" + k)
+      InstallImage(k, img_file, v, info)
+    except KeyError:
+      print "warning: no " + k + " image in input target_files; not flashing " + k
+
