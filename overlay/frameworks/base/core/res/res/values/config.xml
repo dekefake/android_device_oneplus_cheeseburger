@@ -30,10 +30,12 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
+        <item>20</item>
         <item>45</item>
         <item>1025</item>
         <item>1480</item>
-        <item>2940</item>
+        <item>2250</item>
+        <item>3300</item>
         <item>10000</item>
     </integer-array>
 
@@ -42,17 +44,22 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>11</item>
-        <item>26</item>
-        <item>60</item>
-        <item>108</item>
-        <item>175</item>
+        <item>6</item>
+        <item>10</item>
+        <item>20</item>
+        <item>46</item>
+        <item>78</item>
+        <item>128</item>
+        <item>220</item>
         <item>255</item>
     </integer-array>
 
-    <!-- OOS brightness tweaks -->
-    <!--<integer name="config_autoBrightnessBrighteningLightFastDebounce">500</integer>-->
-    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
 
     <!-- Minimum screen brightness allowed by the power manager. -->
@@ -60,11 +67,13 @@
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">46</integer>
+
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
 
     <!-- Does the notification LED support multiple colors?
          Used to decide if the user can change the colors -->
