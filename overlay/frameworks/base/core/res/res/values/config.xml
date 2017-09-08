@@ -73,8 +73,6 @@
          Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">46</integer>
 
-    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
-
     <!-- Does the notification LED support multiple colors?
          Used to decide if the user can change the colors -->
     <bool name="config_multiColorNotificationLed">true</bool>
