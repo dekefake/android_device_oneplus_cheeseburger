@@ -52,7 +52,7 @@ image_partitions = {
 }
 
 def FullOTA_InstallEnd(info):
-  info.script.Print("Writing images...")
+  info.script.Print("Writing recommended firmware...")
   for k, v in image_partitions.iteritems():
     try:
       img_file = info.input_zip.read("firmware/" + k)
