@@ -51,6 +51,18 @@ image_partitions = {
    'logo.bin' : 'LOGO'
 }
 
+image_partitionsbak = {
+   'cmnlib64.mbn' : 'cmnlib64bak',
+   'cmnlib.mbn' : 'cmnlibbak',
+   'hyp.mbn' : 'hypbak',
+   'tz.mbn' : 'tzbak',
+   'abl.elf' : 'ablbak',
+   'devcfg.mbn' : 'devcfgbak',
+   'keymaster.mbn' : 'keymasterbak',
+   'xbl.elf' : 'xblbak',
+   'rpm.mbn' : 'rpmbak'
+}
+
 def FullOTA_InstallEnd(info):
   info.script.Print("Writing recommended firmware...")
   for k, v in image_partitions.iteritems():
@@ -59,4 +71,11 @@ def FullOTA_InstallEnd(info):
       InstallImage(k, img_file, v, info)
     except KeyError:
       print "warning: no " + k + " image in input target_files; not flashing " + k
+  info.script.Print("Writing recommended firmware to backup partitions...")
+  for y, z in image_partitionsbak.iteritems():
+    try:
+      img_file = info.input_zip.read("firmware/" + y)
+      InstallImage(y, img_file, z, info)
+    except KeyError:
+      print "warning: no " + y + " image in input target_files; not flashing " + y
 
