@@ -26,6 +26,9 @@ def IncrementalOTA_Assertions(info):
   AddModemAssertion(info)
   return
 
+def AddModemAssertion(info):
+  print "AddModemAssertion isnt needed, firmware is baked into the rom"
+
 def InstallImage(img_name, img_file, partition, info):
   common.ZipWriteStr(info.output_zip, "firmware/" + img_name, img_file)
   info.script.AppendExtra(('package_extract_file("' + "firmware/" + img_name + '", "/dev/block/bootdevice/by-name/' + partition + '");'))
