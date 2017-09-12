@@ -107,11 +107,6 @@ TARGET_SCREEN_WIDTH := 1080
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
 
-
-# Init
-PRODUCT_PACKAGES += \
-    libinit_cheeseburger \
-
 # Audio
 PRODUCT_PACKAGES += \
     audiod \
@@ -143,7 +138,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    ParanoidCamera
+    SnapdragonCamera
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
