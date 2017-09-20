@@ -291,7 +291,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.sdio.sh:system/etc/init.qcom.sdio.sh \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.uicc.sh:system/etc/init.qcom.uicc.sh \
-    $(LOCAL_PATH)/rootdir/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.wifi.sh:system/etc/init.qcom.wifi.sh \
+    $(LOCAL_PATH)/rootdir/res/images/font_logo.png:root/res/images/font_logo.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_fail.png:root/res/images/charger/battery_fail.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/battery_scale.png:root/res/images/charger/battery_scale.png \
+    $(LOCAL_PATH)/rootdir/res/images/charger/cm_battery_scale.png:root/res/images/charger/cm_battery_scale.png
 
 # Recovery
 PRODUCT_PACKAGES += \
