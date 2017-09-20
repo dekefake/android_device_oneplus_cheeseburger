@@ -2378,7 +2378,9 @@ case "$target" in
 
         # Enable input boost configuration
         echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
-        echo 100 > /sys/module/cpu_boost/parameters/input_boost_ms
+        echo "0:1401600" > /sys/module/cpu_boost/parameters/input_boost_freq_s2
+        echo 90 > /sys/module/cpu_boost/parameters/input_boost_ms
+        echo 150 > /sys/module/cpu_boost/parameters/input_boost_ms_s2
         # Enable bus-dcvs
         for cpubw in /sys/class/devfreq/*qcom,cpubw*
         do
