@@ -11,6 +11,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- This value may be tweaked to save memory on low RAM devices. The value
+         is the percentage of camera preview height/width to scale to. -->
+    <integer name="panorama_frame_size_reduction">100</integer>
+    <string-array name="longshot_scenemodes">
+        <item>placeholder</item>
+    </string-array>
     <!-- Restart preview when manual iso is used -->
     <bool name="manual_iso_restart_preview_onPictureTaken">true</bool>
 </resources>
