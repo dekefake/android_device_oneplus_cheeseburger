@@ -32,6 +32,7 @@ def AddModemAssertion(info):
 def InstallImage(img_name, img_file, partition, info):
   common.ZipWriteStr(info.output_zip, "firmware/" + img_name, img_file)
   info.script.AppendExtra(('package_extract_file("' + "firmware/" + img_name + '", "/dev/block/bootdevice/by-name/' + partition + '");'))
+  info.script.AppendExtra(('run_program("fstrim", "-v", "/data")'))
 
 image_partitions = {
    'cmnlib64.mbn' : 'cmnlib64',
