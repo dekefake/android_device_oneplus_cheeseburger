@@ -32,7 +32,6 @@ def AddModemAssertion(info):
 def InstallImage(img_name, img_file, partition, info):
   common.ZipWriteStr(info.output_zip, "firmware/" + img_name, img_file)
   info.script.AppendExtra(('package_extract_file("' + "firmware/" + img_name + '", "/dev/block/bootdevice/by-name/' + partition + '");'))
-  info.script.AppendExtra(('run_program("fstrim", "-v", "/data")'))
 
 image_partitions = {
    'cmnlib64.mbn' : 'cmnlib64',
@@ -65,6 +64,8 @@ image_partitionsbak = {
 }
 
 def FullOTA_InstallEnd(info):
+  info.script.Print("Trimming unnused block on /data...")
+  info.script.AppendExtra(('run_program("fstrim", "-v", "/data");'))
   info.script.Print("Writing recommended firmware...")
   for k, v in image_partitions.iteritems():
     try:
@@ -72,7 +73,6 @@ def FullOTA_InstallEnd(info):
       InstallImage(k, img_file, v, info)
     except KeyError:
       print "warning: no " + k + " image in input target_files; not flashing " + k
-  info.script.Print("Writing recommended firmware to backup partitions...")
   for y, z in image_partitionsbak.iteritems():
     try:
       img_file = info.input_zip.read("firmware/" + y)
