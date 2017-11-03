@@ -53,6 +53,8 @@ on fs
     mkdir /persist/bms 0700 root system
     restorecon_recursive /persist
 
+    write /sys/class/power_supply/usb/otg_switch 1
+
 #ifdef VENDOR_EDIT
 #### zhiguang.su,make adsp boot faster.
     write /sys/kernel/boot_adsp/boot 1
