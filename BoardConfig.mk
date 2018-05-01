@@ -21,6 +21,7 @@
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
+BOARD_PATH := device/oneplus/cheeseburger
 
 -include device/qcom/common/Android.mk
 PLATFORM_PATH := device/oneplus/cheeseburger
@@ -89,8 +90,8 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-uart"
 TARGET_SUPPORT_THP := true
 
 # Audio
-USE_DEVICE_SPECIFIC_AUDIO := true
-DEVICE_SPECIFIC_AUDIO_PATH := $(PLATFORM_PATH)/audio
+#USE_DEVICE_SPECIFIC_AUDIO := true
+#DEVICE_SPECIFIC_AUDIO_PATH := $(PLATFORM_PATH)/audio
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
@@ -197,6 +198,9 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(PLATFORM_PATH)
 # RIL
 TARGET_RIL_VARIANT := caf
 PROTOBUF_SUPPORTED := true
+# Audio/media
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8998
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8998
 
 # SELinux
 include device/qcom/sepolicy/Android.mk
@@ -225,5 +229,11 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
 -include vendor/oneplus/cheeseburger/BoardConfigVendor.mk
+
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(BOARD_PATH)/sepolicy/public
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(BOARD_PATH)/sepolicy/private
+
+
+
 
 
