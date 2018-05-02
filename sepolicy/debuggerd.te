@@ -1,2 +1,0 @@
-allow debuggerd kernel:key search;
-allow debuggerd media_rw_data_file:dir search;

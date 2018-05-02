@@ -75,7 +75,7 @@ TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
-TARGET_KERNEL_CONFIG := flash_defconfig
+TARGET_KERNEL_CONFIG := lineage_oneplus5_defconfig
 # To override in build/core/tasks/kernel.mk :
 # KERNEL_CROSS_COMPILE := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/linaro-7.x/bin/aarch64-linaro-linux-android-
 
@@ -103,7 +103,6 @@ QCOM_BT_USE_BTNV := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_ext
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
@@ -229,11 +228,4 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
 -include vendor/oneplus/cheeseburger/BoardConfigVendor.mk
-
-BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(BOARD_PATH)/sepolicy/public
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(BOARD_PATH)/sepolicy/private
-
-
-
-
 
