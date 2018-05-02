@@ -21,6 +21,7 @@
 # included in a build is to use PRODUCT_PACKAGES in a product
 # definition file).
 #
+
 BOARD_PATH := device/oneplus/cheeseburger
 
 -include device/qcom/common/Android.mk
